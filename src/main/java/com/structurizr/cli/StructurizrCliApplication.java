@@ -1,6 +1,7 @@
 package com.structurizr.cli;
 
 import com.structurizr.cli.export.ExportCommand;
+import com.structurizr.cli.generate.GenerateCommand;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.logging.log4j.Level;
@@ -24,6 +25,7 @@ public class StructurizrCliApplication {
 	private static final String VALIDATE_COMMAND = "validate";
 	private static final String LIST_COMMAND = "list";
 	private static final String HELP_COMMAND = "help";
+	private static final String GENERATE_COMMAND = "generate";
 
 	private static final Map<String,AbstractCommand> COMMANDS = new HashMap<>();
 
@@ -62,6 +64,7 @@ public class StructurizrCliApplication {
 		COMMANDS.put(VALIDATE_COMMAND, new ValidateCommand());
 		COMMANDS.put(LIST_COMMAND, new ListCommand());
 		COMMANDS.put(HELP_COMMAND, new HelpCommand());
+		COMMANDS.put(GENERATE_COMMAND, new GenerateCommand());
 	}
 
 	public void run(String... args) {
